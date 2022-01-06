@@ -6,7 +6,7 @@
 #    By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/26 09:31:22 by ahuber            #+#    #+#              #
-#    Updated: 2021/12/15 18:37:23 by ahuber           ###   ########.fr        #
+#    Updated: 2022/01/06 16:38:40 by ahuber           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC =	push_swap.c \
 		ft_minilibft.c \
 		ft_split_shit.c \
 		too_long.c \
-		algo_simple.c
+		algo_simple.c \
+		replace_double.c
 
 OBJ = $(SRC:.c=.o)
 

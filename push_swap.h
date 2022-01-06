@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:54:09 by ahuber            #+#    #+#             */
-/*   Updated: 2021/12/16 17:56:34 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 16:41:21 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct s_info
 	int	error;
 	int	i;
 	int	j;
+	int	b;
+	char	*str_command;
+	int	str_i;
 }	t_info;
 
 void	ps_sa(t_info *info);
@@ -73,5 +76,6 @@ void	algo_three_long(t_info *info);
 int		ft_split_shit_long(t_info *info, int i);
 void	free_me(t_info *info);
 int		hate_the_letters(int argc, char **argv);
+void    replace_double_ra_rb(t_info *info);
 
 #endif

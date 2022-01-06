@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:15:16 by ahuber            #+#    #+#             */
-/*   Updated: 2021/12/15 16:22:35 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 15:32:21 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ void	ps_sa(t_info *info)
 		info->array_a[i] = info->array_a[i + 1];
 		info->array_a[i + 1] = stock;
 	}
-	write(1, "sa\n", 3);
+	info->str_command[info->str_i] = 's';
+	info->str_command[info->str_i + 1] = 'a';
+	info->str_command[info->str_i + 2] = '\n';
+	info->str_i = info->str_i + 3;
+	//write(1, "sa\n", 3);
 }
 
 void	ps_sb(t_info *info)
@@ -39,14 +43,22 @@ void	ps_sb(t_info *info)
 		info->array_b[i] = info->array_b[i + 1];
 		info->array_b[i + 1] = stock;
 	}
-	write(1, "sb\n", 3);
+	info->str_command[info->str_i] = 's';
+	info->str_command[info->str_i + 1] = 'b';
+	info->str_command[info->str_i + 2] = '\n';
+	info->str_i = info->str_i + 3;
+	//write(1, "sb\n", 3);
 }
 
 void	ps_ss(t_info *info)
 {
 	ps_sa(info);
 	ps_sb(info);
-	write(1, "ss\n", 3);
+	info->str_command[info->str_i - 6] = 's';
+	info->str_command[info->str_i - 5] = 's';
+	info->str_command[info->str_i - 4] = '\n';
+	info->str_i = info->str_i - 3;
+	//write(1, "ss\n", 3);
 }
 
 void	ps_pa(t_info *info)
@@ -73,7 +85,11 @@ void	ps_pa(t_info *info)
 		info->array_b_nbr--;
 		info->array_a_nbr++;
 	}
-	write(1, "pa\n", 3);
+	info->str_command[info->str_i] = 'p';
+	info->str_command[info->str_i + 1] = 'a';
+	info->str_command[info->str_i + 2] = '\n';
+	info->str_i = info->str_i + 3;
+	//write(1, "pa\n", 3);
 }
 
 void	ps_pb(t_info *info)
@@ -100,5 +116,9 @@ void	ps_pb(t_info *info)
 		info->array_a_nbr--;
 		info->array_b_nbr++;
 	}
-	write(1, "pb\n", 3);
+	info->str_command[info->str_i] = 'p';
+	info->str_command[info->str_i + 1] = 'b';
+	info->str_command[info->str_i + 2] = '\n';
+	info->str_i = info->str_i + 3;
+	//write(1, "pb\n", 3);
 }

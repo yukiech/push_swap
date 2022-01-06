@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:15:16 by ahuber            #+#    #+#             */
-/*   Updated: 2021/12/15 16:18:38 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 15:31:31 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ void	ps_rra(t_info *info)
 		i--;
 	}
 	info->array_a[0] = stock;
-	write(1, "rra\n", 4);
+	info->str_command[info->str_i] = 'r';
+	info->str_command[info->str_i + 1] = 'r';
+	info->str_command[info->str_i + 2] = 'a';
+	info->str_command[info->str_i + 3] = '\n';
+	info->str_i = info->str_i + 4;
+	//write(1, "rra\n", 4);
 }
 
 void	ps_rrb(t_info *info)
@@ -41,12 +46,22 @@ void	ps_rrb(t_info *info)
 		i--;
 	}
 	info->array_b[0] = stock;
-	write(1, "rrb\n", 4);
+	info->str_command[info->str_i] = 'r';
+	info->str_command[info->str_i + 1] = 'r';
+	info->str_command[info->str_i + 2] = 'b';
+	info->str_command[info->str_i + 3] = '\n';
+	info->str_i = info->str_i + 4;
+	//write(1, "rrb\n", 4);
 }
 
 void	ps_rrr(t_info *info)
 {
 	ps_rra(info);
 	ps_rrb(info);
-	write(1, "rrr\n", 4);
+	info->str_command[info->str_i - 6] = 'r';
+	info->str_command[info->str_i - 5] = 'r';
+	info->str_command[info->str_i - 4] = 'r';
+	info->str_command[info->str_i - 3] = '\n';
+	info->str_i = info->str_i - 2;
+	//write(1, "rrr\n", 4);
 }

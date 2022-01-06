@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:56:21 by ahuber            #+#    #+#             */
-/*   Updated: 2021/12/16 17:52:41 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 16:45:06 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	main_toolong(t_info *info, int argc, char **argv)
 		info->second_step = malloc(sizeof(int) * argc);
 		info->array_a = malloc(sizeof(int) * argc);
 		info->array_b = malloc(sizeof(int) * argc);
+		info->str_command = malloc(sizeof(char) * (10000 * 4));
+		info->str_i = 0;
 		info->nbr_of_int = (argc - 1);
 		info->nbr_of_int2 = (argc - 1);
 		while (info->nbr_of_int-- > 0)
@@ -80,10 +82,10 @@ void	main_toolong2(t_info *info, int argc)
 	info->j = 1;
 	info->array_b_nbr = 0;
 	info->argc = argc - 1;
-	if (argc > 500)
-		info->chunk_size = 25;
-	else if (argc > 100)
-		info->chunk_size = 10;
+	if (argc >= 100)
+		info->chunk_size = info->argc / 12 + 22;
+	else
+		info->chunk_size = 20;
 	info->chunk_done = 1;
 	info->done = 0;
 	info->nbr_done = 0;
@@ -114,9 +116,8 @@ int	main(int argc, char **argv)
 		algo_four(info);
 	else if (info->array_a_nbr == 5)
 		algo_five(info);
-	else if (info->array_a_nbr < 100)
-		algo_simple(info);
 	else
 		algo_five_hundred(info);
+	replace_double_ra_rb(info);
 	free_me(info);
 }
