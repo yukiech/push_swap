@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:56:21 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 16:45:06 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/07 12:29:28 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	main_toolong(t_info *info, int argc, char **argv)
 		info->second_step = malloc(sizeof(int) * argc);
 		info->array_a = malloc(sizeof(int) * argc);
 		info->array_b = malloc(sizeof(int) * argc);
-		info->str_command = malloc(sizeof(char) * (10000 * 4));
 		info->str_i = 0;
 		info->nbr_of_int = (argc - 1);
 		info->nbr_of_int2 = (argc - 1);
@@ -82,9 +81,10 @@ void	main_toolong2(t_info *info, int argc)
 	info->j = 1;
 	info->array_b_nbr = 0;
 	info->argc = argc - 1;
-	if (argc >= 100)
-		info->chunk_size = info->argc / 12 + 22;
-	else
+	//if (argc >= 100)
+	//	info->chunk_size = info->argc / 12 + 22;
+	//else
+	if (argc <= 100)
 		info->chunk_size = 20;
 	info->chunk_done = 1;
 	info->done = 0;
@@ -95,11 +95,8 @@ void	main_toolong2(t_info *info, int argc)
 		free_me(info);
 }
 
-int	main(int argc, char **argv)
+void	main_unique(int argc, char **argv, t_info *info)
 {
-	t_info	*info;
-
-	info = malloc(sizeof(t_info));
 	main_toolong2(info, argc);
 	main_toolong(info, argc, argv);
 	if (hate_the_letters(argc, argv) == 0)
@@ -119,5 +116,71 @@ int	main(int argc, char **argv)
 	else
 		algo_five_hundred(info);
 	replace_double_ra_rb(info);
+}
+
+void	str_command_replace(t_info *info)
+{
+	int	i;
+
+	i = 0;
+	while (info->str_command_stock[i])
+	{
+		info->str_command_stock[i] = '+';
+		i++;
+	}
+	i = 0;
+	while (info->str_command[i])
+	{	
+		info->str_command_stock[i] = info->str_command[i];
+		i++;
+	}
+	info->str_command_stock[i] = '\0';
+}
+
+int	main(int argc, char **argv)
+{
+	t_info	*info;
+	int	chunk_size;
+	int	i;
+	int	n_command;
+	int	n_command_stock;
+
+	info = malloc(sizeof(t_info));
+	info->str_command = malloc(sizeof(char) * (10000000 * 4));
+	info->str_command_stock = malloc(sizeof(char) * (10000000 * 4));
+	chunk_size = 17;
+	n_command_stock = 10000;
+	while (chunk_size < 28)
+	{
+		i = 0;
+		n_command = 0;
+		info->chunk_size = info->argc / 12 + chunk_size;
+		main_unique(argc, argv, info);
+		while (info->str_command[i])
+		{
+			if (info->str_command[i] == '\n')
+				n_command++;
+			i++;
+		}
+		if (n_command < n_command_stock)
+		{
+			n_command_stock = n_command;
+			str_command_replace(info);
+		}
+		i = 0;
+		while (info->str_command[i])
+		{
+			info->str_command[i] = '+';
+			i++;
+		}
+		chunk_size++;		
+	}
+	i = 0;
+	while (info->str_command_stock[i])
+	{
+		if (info->str_command_stock[i] != '+')
+			printf("%c", info->str_command_stock[i]);
+		i++;
+	}
 	free_me(info);
 }

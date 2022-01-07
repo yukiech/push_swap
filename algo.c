@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 09:04:14 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 17:53:48 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 23:25:38 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,58 +92,11 @@ static void	push_back_in_order(t_info *info)
 	}
 }
 
-/*int	find_biggest(t_info *info)
-{
-	int	biggest;
-	int	i;
-	int	biggest_pos;
-
-	i = 0;
-	biggest = info->array_b[i];
-	biggest_pos = 0;
-	while (i < info->array_b_nbr)
-	{
-		if (info->array_b[i] > biggest)
-		{
-			biggest = info->array_b[i];
-			biggest_pos = i;
-		}
-		i++;
-	}
-	return (biggest_pos);
-}
-
-void	five_hundred_chunk_resend(t_info *info)
-{
-	int	biggest;
-	int	stock;
-
-	info->nbr_done = info->chunk_size;
-	while (info->nbr_done > 0)
-	{
-		biggest = find_biggest(info);
-		stock = info->array_b[biggest];
-		if (biggest < info->chunk_size * 2)
-		{
-			while (biggest-- > 0)
-				ps_rb(info);
-		}
-		else
-		{
-			while (info->array_b[0] != stock)
-				ps_rrb(info);
-		}
-		ps_pa(info);
-		info->nbr_done = info->nbr_done - 1;
-	}
-}*/
 
 void	algo_five_hundred(t_info *info)
 {
 	if (info->argc < 500)
 		info->chunk_size = info->argc / 12 + 22;
-	else
-		info->chunk_size = 57;
 	push_in_chunks(info);
 	while (info->array_b_nbr > 0)
 		push_back_in_order(info);

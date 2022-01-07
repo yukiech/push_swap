@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:54:09 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 16:41:21 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/07 09:06:10 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_info
 	int	j;
 	int	b;
 	char	*str_command;
+	char	*str_command_stock;
 	int	str_i;
 }	t_info;
 

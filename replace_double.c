@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:24:27 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 16:41:13 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/06 23:37:36 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	replace_double_ra_rb(t_info *info)
 		}
 	}
 	i = -1;
-	while (info->str_command[++i])
-	{
-		if (info->str_command[i] != '+')
-			printf("%c", info->str_command[i]);
-	}
+	//while (info->str_command[++i])
+	//{
+	//	if (info->str_command[i] != '+')
+	//		printf("%c", info->str_command[i]);
+	//}
 }
