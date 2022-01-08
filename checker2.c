@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:56:21 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/07 18:30:42 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 09:06:54 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,71 +116,4 @@ void	main_unique(int argc, char **argv, t_info *info, int checker)
 			algo_five_hundred(info);
 		replace_double_ra_rb(info);
 	}
-}
-
-void	str_command_replace(t_info *info)
-{
-	int	i;
-
-	i = 0;
-	while (info->str_command_stock[i])
-	{
-		info->str_command_stock[i] = '+';
-		i++;
-	}
-	i = 0;
-	while (info->str_command[i])
-	{	
-		info->str_command_stock[i] = info->str_command[i];
-		i++;
-	}
-	info->str_command_stock[i] = '\0';
-}
-
-int	main(int argc, char **argv)
-{
-	t_info	*info;
-	int	chunk_size;
-	int	i;
-	int	n_command;
-	int	n_command_stock;
-
-	info = malloc(sizeof(t_info));
-	info->str_command = malloc(sizeof(char) * (6000 * 4));
-	info->str_command_stock = malloc(sizeof(char) * (6000 * 4));
-	chunk_size = 17;
-	n_command_stock = 10000;
-	while (chunk_size < 28)
-	{
-		i = 0;
-		n_command = 0;
-		info->chunk_size = info->argc / 12 + chunk_size;
-		main_unique(argc, argv, info, 0);
-		while (info->str_command[i])
-		{
-			if (info->str_command[i] == '\n')
-				n_command++;
-			i++;
-		}
-		if (n_command < n_command_stock)
-		{
-			n_command_stock = n_command;
-			str_command_replace(info);
-		}
-		i = 0;
-		while (info->str_command[i])
-		{
-			info->str_command[i] = '+';
-			i++;
-		}
-		chunk_size++;		
-	}
-	i = 0;
-	while (info->str_command_stock[i])
-	{
-		if (info->str_command_stock[i] != '+')
-			printf("%c", info->str_command_stock[i]);
-		i++;
-	}
-	free_me(info);
 }

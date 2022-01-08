@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:54:09 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/07 09:06:10 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 09:02:14 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <string.h>
+
+#define SA	"sa\n"
+#define SB	"sb\n"
+#define SS	"ss\n"
+#define PA	"pa\n"
+#define PB	"pb\n"
+#define RA	"ra\n"
+#define RB	"rb\n"
+#define RR	"rr\n"
+#define RRA	"rra\n"
+#define RRB	"rrb\n"
+#define RRR	"rrr\n"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
 
 typedef struct s_info
 {
@@ -78,5 +94,11 @@ int		ft_split_shit_long(t_info *info, int i);
 void	free_me(t_info *info);
 int		hate_the_letters(int argc, char **argv);
 void    replace_double_ra_rb(t_info *info);
+char	*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(const char *s1, const char *s2);
+void    main_unique(int argc, char **argv, t_info *info, int checker);
 
 #endif
