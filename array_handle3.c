@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:15:16 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 15:31:31 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 11:48:00 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ps_rra(t_info *info)
 	info->str_command[info->str_i + 2] = 'a';
 	info->str_command[info->str_i + 3] = '\n';
 	info->str_i = info->str_i + 4;
-	//write(1, "rra\n", 4);
 }
 
 void	ps_rrb(t_info *info)
@@ -51,7 +50,6 @@ void	ps_rrb(t_info *info)
 	info->str_command[info->str_i + 2] = 'b';
 	info->str_command[info->str_i + 3] = '\n';
 	info->str_i = info->str_i + 4;
-	//write(1, "rrb\n", 4);
 }
 
 void	ps_rrr(t_info *info)
@@ -63,5 +61,4 @@ void	ps_rrr(t_info *info)
 	info->str_command[info->str_i - 4] = 'r';
 	info->str_command[info->str_i - 3] = '\n';
 	info->str_i = info->str_i - 2;
-	//write(1, "rrr\n", 4);
 }

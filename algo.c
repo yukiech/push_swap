@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 09:04:14 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/06 23:25:38 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 11:49:11 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ int	smart_rotate_b(t_info *info)
 {
 	int	cnt;
 	int	swap;
-	int	i = 0;
+	int	i;
 	int	sz;
 
+	i = 0;
 	cnt = 0;
 	swap = 0;
 	sz = info->array_b_nbr;
@@ -91,7 +92,6 @@ static void	push_back_in_order(t_info *info)
 			ps_pa(info);
 	}
 }
-
 
 void	algo_five_hundred(t_info *info)
 {

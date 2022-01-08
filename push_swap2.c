@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_check.c                                      :+:      :+:    :+:   */
+/*   push_swap2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 10:02:54 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/08 14:36:55 by ahuber           ###   ########.fr       */
+/*   Created: 2022/01/08 11:52:52 by ahuber            #+#    #+#             */
+/*   Updated: 2022/01/08 14:35:59 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	already_sorted(t_info info)
+int	find_smallest(t_info *info)
+{
+	int	smallest;
+	int	i;
+	int	smallest_pos;
+
+	smallest = INT_MAX;
+	i = 0;
+	smallest_pos = 0;
+	while (i < info->array_a_nbr)
+	{
+		if (info->first_step[i] < smallest)
+		{
+			smallest = info->first_step[i];
+			smallest_pos = i;
+		}
+		i++;
+	}
+	info->first_step[smallest_pos] = INT_MAX;
+	return (smallest_pos);
+}
+
+void	from_step_to_array_a(t_info *info)
 {
 	int	i;
 
 	i = 0;
-	while (i < info.array_a_nbr)
+	while (i < info->array_a_nbr)
 	{
-		if (info.array_a[i] != (i + 1))
-			return (0);
-		else
-			i++;
+		info->array_a[i] = info->second_step[i];
+		i++;
 	}
-	return (1);
-}
-
-void	error(t_info *info)
-{
-	write(1, "Error\n", 6);
-	free(info->first_step);
-	free(info->second_step);
-	free(info->array_a);
-	free(info->array_b);
-	free(info);
-	exit(0);
-}
-
-void	free_me(t_info *info)
-{
-	free(info->first_step);
-	free(info->second_step);
-	free(info->array_a);
-	free(info->array_b);
-	free(info);
-	exit(0);
 }

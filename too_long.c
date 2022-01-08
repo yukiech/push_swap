@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:29:32 by ahuber            #+#    #+#             */
-/*   Updated: 2021/12/16 17:53:16 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 14:35:22 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,23 @@ int	hate_the_letters(int argc, char **argv)
 		i++;
 	}
 	return (1);
+}
+
+void	str_command_replace(t_info *info)
+{
+	int	i;
+
+	i = 0;
+	while (info->str_command_stock[i])
+	{
+		info->str_command_stock[i] = '+';
+		i++;
+	}
+	i = 0;
+	while (info->str_command[i])
+	{
+		info->str_command_stock[i] = info->str_command[i];
+		i++;
+	}
+	info->str_command_stock[i] = '\0';
 }

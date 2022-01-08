@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 08:56:21 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/08 09:06:54 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 11:51:29 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,6 @@ void	main_unique(int argc, char **argv, t_info *info, int checker)
 		error(info);
 	if (argc == 2)
 		ft_split_shit(info, argv[1]);
-	if (already_sorted(*info) == 1)
-		free_me(info);
 	if (checker == 0)
 	{
 		if (info->array_a_nbr == 2)

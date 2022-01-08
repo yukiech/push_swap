@@ -65,13 +65,13 @@ fi
 if ! [[ -f "$1/push_swap" ]]; then
 	printf "${RED}error: could not find push_swap in $1 \n${NOCOLOR}" >&2
 	exit -1;
-elif ! [[ -f "$1/checker" ]]; then
+elif ! [[ -f "$1/checker_Mac" ]]; then
 	printf "${RED}error: could not find checker in $1 \n${NOCOLOR}" >&2
 	exit -1;
 elif ! [[ -x "$1/push_swap" ]]; then
 	printf "${RED}error: cannot execute push_swap in $1 \n${NOCOLOR}" >&2
 	exit -1;
-elif ! [[ -x "$1/checker" ]]; then
+elif ! [[ -x "$1/checker_Mac" ]]; then
 	printf "${RED}error: cannot execute checker in $1 \n${NOCOLOR}" >&2
 	exit -1;
 else
@@ -86,7 +86,7 @@ for ((stack_size = $startRange; stack_size <= $endRange; stack_size++)); do
 	ARG=`./genstack.pl $stack_size -1000 1000` ;
 #	echo $ARG
 	"./$1/push_swap" $ARG > push_swap_result.txt ;
-	RESULT_CHECKER=`"./$1/checker" $ARG < push_swap_result.txt`
+	RESULT_CHECKER=`"./$1/checker_Mac" $ARG < push_swap_result.txt`
 	if [[ "$RESULT_CHECKER" = "KO" ]]; then
 		printf "${RED}$RESULT_CHECKER ${NOCOLOR}"
 	else
