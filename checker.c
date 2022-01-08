@@ -6,7 +6,7 @@
 /*   By: ahuber <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 11:50:16 by ahuber            #+#    #+#             */
-/*   Updated: 2022/01/08 14:37:22 by ahuber           ###   ########.fr       */
+/*   Updated: 2022/01/08 14:51:39 by ahuber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 void	false_command(t_info *info)
 {
-	free_me(info);
 	write(1, "Error\n", 6);
-	exit(1);
+	free_me(info);
 }
 
 void	execute_commands(t_info *info, char *commands)
@@ -76,7 +75,7 @@ int	main(int argc, char **argv)
 		free(commands);
 		commands = get_next_line(1);
 	}
-	write(1, "\033[H\033[2J", 7);
+	//write(1, "\033[H\033[2J", 7);
 	if (already_sorted(*info) == 1)
 		write(1, "OK\n", 3);
 	else
