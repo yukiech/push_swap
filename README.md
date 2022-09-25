@@ -49,3 +49,10 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
 
 # Ma solution
 Pour des raisons de simplicité et de connaissance j'ai choisi d'utiliser des int * comme type de Stacks.
+Ce choix était moins pratique que des listes chaînées mais correspondait mieux à mes connaissances.
+
+J'ai fait le choix de ne pas tenter d'algo complexe et déjà existants que j'aurais du adapter au commandes à ma disposition mais de tenter une autre logique plus simple a comprendre et expliquer.
+(Exemples d'algo de tri standards : https://www.youtube.com/watch?v=OOBBI-kSChM)
+
+La base de logique de mon algo est la suivante :
+![alt text](https://cdn.discordapp.com/attachments/903236693463797810/1023507459056336906/algo.png)
