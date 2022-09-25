@@ -56,3 +56,9 @@ J'ai fait le choix de ne pas tenter d'algo complexe et déjà existants que j'au
 
 La base de logique de mon algo est la suivante :
 ![alt text](https://cdn.discordapp.com/attachments/903236693463797810/1023514160853696624/algo.png)
+
+Cette logique avait été sufffisante pour valider le projet mais j'étais revenu dessus afin de la valider à 125%.
+Le 125% consistait à "optimiser" l'algo afin que le nombre de commandes à effectuer soit le plus petit possible. (La vitesse d'execution n'est pas relevante même si elle doit rester raisonnable)
+J'ai donc du rajouter divers petites optimisations frustrante (-20 commandes, -30commandes, ...) qui ont finies par rendre mon code moins joli.
+
+Notamment, au lieu de calculer une taille de "chunk" fixe en fonction du nombre d'int en input, j'ai créer un nouveau main qui appele mon ancien main avec +- 10 de la taille de "chunk" calculée puis récupère les commandes sous forme de strings et les compares entre elles afin de trouver une version plus courte.
