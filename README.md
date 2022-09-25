@@ -18,6 +18,9 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
 > $>./push_swap 0 one 2 3<br />
 > Error<br />
 
+> $>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG<br />
+> OK<br />
+
 # Liste des commandes
 
 **__sa (swap a) :__**<br />
