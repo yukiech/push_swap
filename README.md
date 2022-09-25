@@ -21,6 +21,8 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
 > $>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_Mac $ARG<br />
 > OK<br />
 
+Le repo contient également 2 checkers ([push_swap_tester](https://github.com/louisabricot/push_swap_tester) et [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)) qui ont été réalisés par d'autre programmeurs et qui m'ont énormément aidés à réaliser le projet.
+
 Le 125% nécessitait aussi de coder un checker nous même. (checker.c)
 
 # Liste des commandes
