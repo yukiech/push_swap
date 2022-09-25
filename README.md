@@ -6,24 +6,24 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
 
 # Liste des commandes
 
-sa (swap a) : Intervertit les 2 premiers éléments au sommet de la pile a.<br />
+**__sa (swap a) :__** Intervertit les 2 premiers éléments au sommet de la pile a.<br />
 Ne fait rien s’il n’y en a qu’un ou aucun.<br />
-sb (swap b ) : Intervertit les 2 premiers éléments au sommet de la pile b.<br />
+**__sb (swap b ) :__** Intervertit les 2 premiers éléments au sommet de la pile b.<br />
 Ne fait rien s’il n’y en a qu’un ou aucun.<br />
-ss : sa et sb en même temps.<br />
-pa (push a) : Prend le premier élément au sommet de b et le met sur a.<br />
+**__ss : sa et sb en même temps.<br />
+**__pa (push a) :__** Prend le premier élément au sommet de b et le met sur a.<br />
 Ne fait rien si b est vide.<br />
-pb (push b) : Prend le premier élément au sommet de a et le met sur b.<br />
+**__pb (push b) :__** Prend le premier élément au sommet de a et le met sur b.<br />
 Ne fait rien si a est vide.<br />
-ra (rotate a) : Décale d’une position vers le haut tous les élements de la pile a.<br />
+**__ra (rotate a) :__** Décale d’une position vers le haut tous les élements de la pile a.<br />
 Le premier élément devient le dernier.<br />
-rb (rotate b) : Décale d’une position vers le haut tous les élements de la pile b.<br />
+**__rb (rotate b) :__** Décale d’une position vers le haut tous les élements de la pile b.<br />
 Le premier élément devient le dernier.<br />
-rr : ra et rb en même temps.<br />
-rra (reverse rotate a) : Décale d’une position vers le bas tous les élements de<br />
+**__rr :__** ra et rb en même temps.<br />
+**__rra (reverse rotate a) :__** Décale d’une position vers le bas tous les élements de<br />
 la pile a. Le dernier élément devient le premier.<br />
-rrb (reverse rotate b) : Décale d’une position vers le bas tous les élements de<br />
+**__rrb (reverse rotate b) :__** Décale d’une position vers le bas tous les élements de<br />
 la pile b. Le dernier élément devient le premier.<br />
-rrr : rra et rrb en même temps.<br />
+**__rrr :__** rra et rrb en même temps.<br />
 
 ![alt text](https://cdn.discordapp.com/attachments/903236693463797810/1023507482057904148/push_swap2.png)
