@@ -55,4 +55,4 @@ J'ai fait le choix de ne pas tenter d'algo complexe et déjà existants que j'au
 (Exemples d'algo de tri standards : https://www.youtube.com/watch?v=OOBBI-kSChM)
 
 La base de logique de mon algo est la suivante :
-![alt text]([https://cdn.discordapp.com/attachments/903236693463797810/1023507459056336906/algo.png](https://cdn.discordapp.com/attachments/903236693463797810/1023514160853696624/algo.png))
+![alt text](https://cdn.discordapp.com/attachments/903236693463797810/1023514160853696624/algo.png)
