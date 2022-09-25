@@ -6,17 +6,17 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
 
 # Utilisation
 
-> $>./push_swap 2 1 3 6 5 8
-> sa
-> pb
-> pb
-> pb
-> sa
-> pa
-> pa
-> pa
-> $>./push_swap 0 one 2 3
-> Error
+> $>./push_swap 2 1 3 6 5 8<br />
+> sa<br />
+> pb<br />
+> pb<br />
+> pb<br />
+> sa<br />
+> pa<br />
+> pa<br />
+> pa<br />
+> $>./push_swap 0 one 2 3<br />
+> Error<br />
 
 # Liste des commandes
 
