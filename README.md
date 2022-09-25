@@ -46,3 +46,6 @@ Le programme doit print une suite de ces commandes dans le terminal.<br />
   rra et rrb en même temps.<br />
 
 ![alt text](https://cdn.discordapp.com/attachments/903236693463797810/1023507482057904148/push_swap2.png)
+
+# Ma solution
+Pour des raisons de simplicité et de connaissance j'ai choisi d'utiliser des int * comme type de Stacks.
